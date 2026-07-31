@@ -266,6 +266,49 @@ h2::after {
   margin: 1rem auto 0;
 }
 
+/* Buttons */
+.btn-gold {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--cream);
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-gold:hover {
+  background: var(--gold-dark);
+}
+
+/* Map toggle */
+.map-toggle-wrap {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.map-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  max-height: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  transition: max-height 0.4s ease, margin-top 0.4s ease;
+}
+
+.map-wrapper.open {
+  max-height: 400px;
+  margin-top: 1.5rem;
+}
+
+.map-wrapper iframe {
+  display: block;
+  border-radius: var(--radius);
+}
+
 /* Info grid */
 .info-grid {
   display: grid;
@@ -294,6 +337,50 @@ h2::after {
   margin: 0 auto;
   text-align: center;
   color: var(--ink-soft);
+}
+
+/* Meal choice */
+.meal-intro {
+  text-align: center;
+  color: var(--ink-soft);
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+.meal-form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.meal-form label {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-top: 0.5rem;
+}
+
+.meal-form input,
+.meal-form select {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--blush);
+  border-radius: 8px;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.meal-form input:focus,
+.meal-form select:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
+}
+
+.meal-form .btn-gold {
+  margin-top: 1.25rem;
+  align-self: center;
 }
 
 /* FAQ */

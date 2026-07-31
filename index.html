@@ -19,6 +19,7 @@
       <a href="#vieta">Vieta</a>
       <a href="#sveciams">Svečiams</a>
       <a href="#dovanos">Dovanos</a>
+      <a href="#vakariene">Vakarienė</a>
       <a href="#duk">DUK</a>
       <a href="#rsvp">RSVP</a>
     </nav>
@@ -83,8 +84,17 @@
   <div class="container">
     <h2>Kur mes? 📍</h2>
     <p class="venue-city">Donelaičio g., Kaunas</p>
-    <!-- TODO: įrašyti tikslų pastato/salės numerį ir pavadinimą, jei reikia -->
-    <p class="venue-placeholder">Tikslų adresą ir žemėlapį mesim greitai, kad nepasiklystumėt 😅</p>
+    <div class="map-toggle-wrap">
+      <button type="button" class="btn-gold" id="mapToggle">Rodyk žemėlapį 🗺️</button>
+    </div>
+    <div class="map-wrapper" id="mapWrapper">
+      <iframe
+        src="https://www.google.com/maps?q=54.8994612,23.9104343&z=17&output=embed"
+        width="100%" height="350" style="border:0"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Šventės vietos žemėlapis"></iframe>
+    </div>
   </div>
 </section>
 
@@ -109,6 +119,27 @@
     <h2>Dovanos 🎁</h2>
     <!-- TODO: įrašyti norimą dovanų/piniginio prisidėjimo informaciją -->
     <p>Jūs čia — jau geriausia dovana 🥹 Bet jeigu tiesiog niežti rankos ką nors padovanoti, mielai priimsim piniginį prisidėjimą prie mūsų ateities — klauskit asmeniškai, pasakysim detales 😏</p>
+  </div>
+</section>
+
+<section class="section section-alt" id="vakariene">
+  <div class="container">
+    <h2>Ką valgysim? 🍽️</h2>
+    <p class="meal-intro">Pasirink savo vakarienę, kad žinotume, ko ir kiek pirkti 😋</p>
+    <form class="meal-form" id="mealForm">
+      <label for="guestName">Tavo vardas</label>
+      <input type="text" id="guestName" name="guestName" placeholder="Vardas Pavardė" required>
+
+      <label for="mealChoice">Vakarienė</label>
+      <select id="mealChoice" name="mealChoice" required>
+        <option value="" disabled selected>Rinkis...</option>
+        <option value="Kebabas">🌯 Kebabas</option>
+        <option value="Burgeris">🍔 Burgeris</option>
+        <option value="Pica">🍕 Pica</option>
+      </select>
+
+      <button type="submit" class="btn-gold">Patvirtinti pasirinkimą</button>
+    </form>
   </div>
 </section>
 

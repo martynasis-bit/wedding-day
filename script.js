@@ -57,3 +57,40 @@
     });
   });
 })();
+
+// Žemėlapio rodymas / slėpimas
+(function () {
+  var mapToggle = document.getElementById('mapToggle');
+  var mapWrapper = document.getElementById('mapWrapper');
+
+  if (!mapToggle || !mapWrapper) return;
+
+  mapToggle.addEventListener('click', function () {
+    var isOpen = mapWrapper.classList.toggle('open');
+    mapToggle.textContent = isOpen ? 'Slėpti žemėlapį 🙈' : 'Rodyk žemėlapį 🗺️';
+  });
+})();
+
+// Vakarienės pasirinkimo siuntimas el. paštu
+(function () {
+  var form = document.getElementById('mealForm');
+  if (!form) return;
+
+  var RECIPIENT_EMAIL = 'martynasis@atlantisgames.lt';
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    var name = document.getElementById('guestName').value.trim();
+    var meal = document.getElementById('mealChoice').value;
+
+    var subject = 'Vakarienės pasirinkimas: ' + name;
+    var body = 'Vardas: ' + name + '\nVakarienė: ' + meal;
+
+    var mailtoLink = 'mailto:' + RECIPIENT_EMAIL +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+
+    window.location.href = mailtoLink;
+  });
+})();
