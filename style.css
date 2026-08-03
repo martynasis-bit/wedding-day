@@ -383,6 +383,19 @@ h2::after {
   align-self: center;
 }
 
+.meal-success {
+  display: none;
+  text-align: center;
+  color: var(--gold-dark);
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.meal-success.visible {
+  display: block;
+}
+
 /* FAQ */
 .faq-list {
   max-width: 700px;

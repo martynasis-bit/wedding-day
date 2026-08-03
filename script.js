@@ -71,12 +71,15 @@
   });
 })();
 
-// Vakarienės pasirinkimo siuntimas el. paštu
+// Vakarienės pasirinkimo siuntimas į Google Forms (kaupiama Google Sheets lentelėje)
 (function () {
   var form = document.getElementById('mealForm');
+  var successMsg = document.getElementById('mealSuccess');
   if (!form) return;
 
-  var RECIPIENT_EMAIL = 'martynasis@atlantisgames.lt';
+  var FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfirYz6avwlKkQfv874Q4L1JCZFjGYSed66g7mexqkmh3UJ_w/formResponse';
+  var ENTRY_NAME = 'entry.724751643';
+  var ENTRY_MEAL = 'entry.1873528169';
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -84,13 +87,18 @@
     var name = document.getElementById('guestName').value.trim();
     var meal = document.getElementById('mealChoice').value;
 
-    var subject = 'Vakarienės pasirinkimas: ' + name;
-    var body = 'Vardas: ' + name + '\nVakarienė: ' + meal;
+    var params = new URLSearchParams();
+    params.append(ENTRY_NAME, name);
+    params.append(ENTRY_MEAL, meal);
 
-    var mailtoLink = 'mailto:' + RECIPIENT_EMAIL +
-      '?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(body);
-
-    window.location.href = mailtoLink;
+    fetch(FORM_ACTION_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params
+    }).finally(function () {
+      form.reset();
+      if (successMsg) successMsg.classList.add('visible');
+    });
   });
 })();
