@@ -77,9 +77,9 @@
   var successMsg = document.getElementById('mealSuccess');
   if (!form) return;
 
-  var FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfirYz6avwlKkQfv874Q4L1JCZFjGYSed66g7mexqkmh3UJ_w/formResponse';
-  var ENTRY_NAME = 'entry.724751643';
-  var ENTRY_MEAL = 'entry.1873528169';
+  var FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdZhVO3Q7Esj4dyNhjVXq75fLXZbJiSS2u4w_uZWarHTJJ-2g/formResponse';
+  var ENTRY_NAME = 'entry.1446848440';
+  var ENTRY_MEAL = 'entry.108847326';
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();
