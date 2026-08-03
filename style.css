@@ -355,6 +355,15 @@ h2::after {
   gap: 0.5rem;
 }
 
+.meal-hint {
+  text-align: center;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  max-width: 450px;
+  margin: 1.25rem auto 0;
+}
+
 .meal-form label {
   font-size: 0.9rem;
   color: var(--ink-soft);

@@ -138,8 +138,17 @@
         <option value="Pyca myca">🍕 Pica</option>
       </select>
 
+      <label for="accommodation">Nakvynė</label>
+      <select id="accommodation" name="accommodation" required>
+        <option value="" disabled selected>Rinkis...</option>
+        <option value="jo, reiks">🛏️ Reikės nakvynės</option>
+        <option value="nereiks, as tik dienai op op ir namo">🚗 Tik dienai, važiuosiu namo</option>
+        <option value="viskas ok, pats pasirupinsiu, neapsikrauk">😎 Apsirūpinsiu pats/pati</option>
+      </select>
+
       <button type="submit" class="btn-gold">Patvirtinti pasirinkimą</button>
     </form>
+    <p class="meal-hint">Persigalvojai? Tiesiog užpildyk dar kartą su tuo pačiu vardu — atnaujinsim tavo atsakymą 😉</p>
     <p class="meal-success" id="mealSuccess">Ačiū! Tavo pasirinkimas gautas 🎉</p>
   </div>
 </section>
