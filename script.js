@@ -58,6 +58,21 @@
   });
 })();
 
+// Borat nuotraukos rodymas / slėpimas
+(function () {
+  var boratToggle = document.getElementById('boratToggle');
+  var boratWrapper = document.getElementById('boratWrapper');
+
+  if (!boratToggle || !boratWrapper) return;
+
+  boratToggle.addEventListener('click', function () {
+    var isOpen = boratWrapper.classList.toggle('open');
+    boratToggle.textContent = isOpen
+      ? '🙈 Slėpti'
+      : 'Paspausk čia jei nori pamatyti ką nors ypatingo 👀';
+  });
+})();
+
 // Žemėlapio rodymas / slėpimas
 (function () {
   var mapToggle = document.getElementById('mapToggle');
